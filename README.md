@@ -1,14 +1,17 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Triple Bite</title>
 
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body{
       margin:0;
-      font-family: Arial, sans-serif;
+      font-family:'Poppins', sans-serif;
       background:#fff8f2;
       color:#2d1b12;
     }
@@ -16,49 +19,69 @@
     /* HERO */
     .hero{
       height:100vh;
-      background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
       url('https://images.unsplash.com/photo-1559622214-f8a9850965bb?q=80&w=1400&auto=format&fit=crop');
       background-size:cover;
       background-position:center;
-      color:white;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       text-align:center;
       padding:20px;
+      color:white;
     }
 
+    /* TITULO ESTETICO */
     .hero h1{
-      font-size:4rem;
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:5rem;
       margin:0;
+      letter-spacing:2px;
+      color:#ffffff;
+      text-shadow:0 6px 25px rgba(0,0,0,.6);
     }
 
     .hero p{
       font-size:1.3rem;
       margin:15px 0 25px;
+      color:#f5f5f5;
+      text-shadow:0 4px 15px rgba(0,0,0,.5);
     }
 
-    /* BUTTON */
+    /* BOTON */
     .btn{
       background:#d9a066;
       color:white;
-      padding:12px 25px;
-      border-radius:10px;
+      padding:14px 28px;
+      border-radius:12px;
       text-decoration:none;
-      font-weight:bold;
-      display:inline-block;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#c98a4d;
     }
 
     .btn.big{
       font-size:1.2rem;
-      padding:15px 30px;
+      padding:16px 32px;
     }
 
     /* SECTIONS */
     .section{
-      padding:60px 20px;
+      padding:70px 20px;
       text-align:center;
+    }
+
+    .section h2{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:2.5rem;
+      margin-bottom:20px;
     }
 
     .section.dark{
@@ -69,7 +92,7 @@
     /* GRID */
     .grid{
       display:flex;
-      gap:20px;
+      gap:25px;
       justify-content:center;
       flex-wrap:wrap;
       margin-top:30px;
@@ -78,10 +101,15 @@
     /* CARDS */
     .card{
       background:white;
-      padding:20px;
-      border-radius:15px;
-      width:250px;
-      box-shadow:0 6px 15px rgba(0,0,0,.1);
+      padding:22px;
+      border-radius:18px;
+      width:260px;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
     }
 
     .card.small{
@@ -89,6 +117,8 @@
     }
 
     .card h3{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
       margin-bottom:10px;
     }
 
@@ -103,14 +133,19 @@
       color:white;
       border:none;
       padding:10px;
-      border-radius:8px;
+      border-radius:10px;
       cursor:pointer;
+      transition:0.3s;
+    }
+
+    .card button:hover{
+      background:#2d1b12;
     }
 
     /* DELIVERY */
     .delivery{
       font-size:1.1rem;
-      line-height:1.8;
+      line-height:1.9;
     }
 
     /* CENTER */
@@ -209,13 +244,9 @@
   </section>
 
   <script>
-    const phone = "TUNUMERO"; // cambia esto por tu número
-
-    let orderItem = "";
+    const phone = "TUNUMERO";
 
     function order(product){
-      orderItem = product;
-
       const btn = document.getElementById("whatsappBtn");
 
       const message = `Hello! I want to order a ${product} from The Triple Bite 🍫`;
