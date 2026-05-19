@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Triple Bite</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins', sans-serif;
+      background:#fff8f2;
+      color:#2d1b12;
+    }
+
+    /* HERO */
+    .hero{
+      height:100vh;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url('https://images.unsplash.com/photo-1559622214-f8a9850965bb?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      color:white;
+    }
+
+    /* TITULO ESTETICO */
+    .hero h1{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:5rem;
+      margin:0;
+      letter-spacing:2px;
+      color:#ffffff;
+      text-shadow:0 6px 25px rgba(0,0,0,.6);
+    }
+
+    .hero p{
+      font-size:1.3rem;
+      margin:15px 0 25px;
+      color:#f5f5f5;
+      text-shadow:0 4px 15px rgba(0,0,0,.5);
+    }
+
+    /* BOTON */
+    .btn{
+      background:#d9a066;
+      color:white;
+      padding:14px 28px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#c98a4d;
+    }
+
+    .btn.big{
+      font-size:1.2rem;
+      padding:16px 32px;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:70px 20px;
+      text-align:center;
+    }
+
+    .section h2{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:2.5rem;
+      margin-bottom:20px;
+    }
+
+    .section.dark{
+      background:#4a2c2a;
+      color:white;
+    }
+
+    /* GRID */
+    .grid{
+      display:flex;
+      gap:25px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    /* CARDS */
+    .card{
+      background:white;
+      padding:22px;
+      border-radius:18px;
+      width:260px;
+      box-shadow:0 10px 25px rgba(0,0,0,.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card.small{
+      width:180px;
+    }
+
+    .card h3{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      margin-bottom:10px;
+    }
+
+    .card span{
+      display:block;
+      margin:10px 0;
+      font-weight:bold;
+    }
+
+    .card button{
+      background:#4a2c2a;
+      color:white;
+      border:none;
+      padding:10px;
+      border-radius:10px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .card button:hover{
+      background:#2d1b12;
+    }
+
+    /* DELIVERY */
+    .delivery{
+      font-size:1.1rem;
+      line-height:1.9;
+    }
+
+    /* CENTER */
+    .center{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>The Triple Bite</h1>
+    <p>Freshly baked blondies, brownies & brookies 🍫</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </header>
+
+  <!-- MENU -->
+  <section id="menu" class="section">
+
+    <h2>Our Desserts</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Brownies</h3>
+        <p>Rich fudgy chocolate brownie.</p>
+        <span>$5</span>
+        <button onclick="order('Brownie')">Order</button>
+      </div>
+
+      <div class="card">
+        <h3>Blondies</h3>
+        <p>Soft vanilla caramel bar.</p>
+        <span>$5</span>
+        <button onclick="order('Blondie')">Order</button>
+      </div>
+
+      <div class="card">
+        <h3>Brookies</h3>
+        <p>Cookie + brownie fusion.</p>
+        <span>$6</span>
+        <button onclick="order('Brookie')">Order</button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TOPPINGS -->
+  <section class="section dark">
+
+    <h2>Premium Toppings</h2>
+
+    <div class="grid">
+
+      <div class="card small">
+        <h3>Nutella</h3>
+        <p>+ $1.50</p>
+      </div>
+
+      <div class="card small">
+        <h3>Nido</h3>
+        <p>+ $1.00</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="section">
+
+    <h2>Delivery</h2>
+
+    <p class="delivery">
+      🚚 Fast delivery available in Santa Cruz<br>
+      ⏱ 30–45 minutes<br>
+      📍 Pickup available
+    </p>
+
+  </section>
+
+  <!-- ORDER -->
+  <section class="section center">
+
+    <h2>Place your order</h2>
+
+    <a id="whatsappBtn" class="btn big" target="_blank">
+      Order via WhatsApp
+    </a>
+
+  </section>
+
+  <script>
+    const phone = "TUNUMERO";
+
+    function order(product){
+      const btn = document.getElementById("whatsappBtn");
+
+      const message = `Hello! I want to order a ${product} from The Triple Bite 🍫`;
+
+      btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    }
+  </script>
+
+</body>
+</html>
 
