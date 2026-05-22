@@ -432,6 +432,461 @@
 
     function order(product){
 
+      const btn =<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Triple Bite</title>
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#fff8f2;
+      color:#2d1b12;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url('fondo.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      padding:20px;
+
+      color:white;
+    }
+
+    .hero h1{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size:5rem;
+
+      text-shadow:0 6px 25px rgba(0,0,0,.6);
+    }
+
+    .hero p{
+      margin-top:15px;
+      font-size:1.3rem;
+
+      color:#f5f5f5;
+    }
+
+    /* BOTONES */
+
+    .btn{
+      margin-top:25px;
+
+      background:#d9a066;
+      color:white;
+
+      padding:14px 28px;
+
+      border-radius:12px;
+
+      text-decoration:none;
+      font-weight:600;
+
+      transition:.3s;
+    }
+
+    .btn:hover{
+      background:#c98a4d;
+      transform:scale(1.05);
+    }
+
+    .btn.big{
+      font-size:1.2rem;
+      padding:16px 34px;
+    }
+
+    /* SECCIONES */
+
+    .section{
+      padding:90px 20px;
+      text-align:center;
+    }
+
+    /* ===== MENU BONITO ===== */
+
+    #menu{
+      position:relative;
+      overflow:hidden;
+
+      background:
+      linear-gradient(135deg,#fff7f0,#f3dfcf);
+    }
+
+    /* EFECTOS */
+
+    #menu::before{
+      content:"";
+      position:absolute;
+
+      width:350px;
+      height:350px;
+
+      background:#d9a066;
+
+      border-radius:50%;
+
+      top:-120px;
+      left:-120px;
+
+      filter:blur(100px);
+
+      opacity:.35;
+    }
+
+    #menu::after{
+      content:"";
+      position:absolute;
+
+      width:300px;
+      height:300px;
+
+      background:#4a2c2a;
+
+      border-radius:50%;
+
+      bottom:-120px;
+      right:-120px;
+
+      filter:blur(100px);
+
+      opacity:.18;
+    }
+
+    /* TITULOS */
+
+    .section h2{
+      position:relative;
+      z-index:2;
+
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+
+      font-size:3rem;
+
+      margin-bottom:40px;
+
+      color:#3a1f16;
+    }
+
+    /* GRID */
+
+    .grid{
+      position:relative;
+      z-index:2;
+
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+
+      gap:30px;
+    }
+
+    /* CARDS */
+
+    .card{
+      background:rgba(255,255,255,.65);
+
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+
+      border:1px solid rgba(255,255,255,.5);
+
+      width:260px;
+
+      padding:28px;
+
+      border-radius:24px;
+
+      box-shadow:
+      0 10px 25px rgba(0,0,0,.08);
+
+      transition:.35s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+
+      box-shadow:
+      0 18px 35px rgba(0,0,0,.12),
+      0 0 20px rgba(217,160,102,.25);
+    }
+
+    .card.small{
+      width:180px;
+    }
+
+    .card h3{
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+
+      margin-bottom:12px;
+
+      font-size:1.8rem;
+    }
+
+    .card p{
+      line-height:1.6;
+    }
+
+    .card span{
+      display:block;
+
+      margin:15px 0;
+
+      font-size:1.3rem;
+      font-weight:bold;
+
+      color:#4a2c2a;
+    }
+
+    /* BOTONES CARD */
+
+    .card button{
+      background:
+      linear-gradient(135deg,#5a342f,#2d1b12);
+
+      color:white;
+
+      border:none;
+
+      padding:12px 20px;
+
+      border-radius:12px;
+
+      cursor:pointer;
+
+      font-weight:600;
+
+      transition:.3s;
+    }
+
+    .card button:hover{
+      transform:scale(1.05);
+
+      background:
+      linear-gradient(135deg,#7a4a42,#3d2418);
+    }
+
+    /* SECTION OSCURA */
+
+    .dark{
+      background:#4a2c2a;
+      color:white;
+    }
+
+    .dark h2{
+      color:white;
+    }
+
+    /* DELIVERY */
+
+    .delivery{
+      font-size:1.1rem;
+      line-height:2;
+    }
+
+    /* CENTER */
+
+    .center{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <h1>The Triple Bite</h1>
+
+    <p>
+      Freshly baked blondies, brownies & brookies 🍫
+    </p>
+
+    <a href="#menu" class="btn">
+      View Menu
+    </a>
+
+  </header>
+
+  <!-- MENU -->
+
+  <section id="menu" class="section">
+
+    <h2>Our Desserts</h2>
+
+    <div class="grid">
+
+      <!-- BROWNIES -->
+
+      <div class="card">
+
+        <h3>Brownies</h3>
+
+        <p>
+          Rich fudgy chocolate brownie.
+        </p>
+
+        <span>8 Bs</span>
+
+        <button onclick="order('Brownie')">
+          Order
+        </button>
+
+      </div>
+
+      <!-- BLONDIES -->
+
+      <div class="card">
+
+        <h3>Blondies</h3>
+
+        <p>
+          Soft vanilla caramel bar.
+        </p>
+
+        <span>10 Bs</span>
+
+        <button onclick="order('Blondie')">
+          Order
+        </button>
+
+      </div>
+
+      <!-- BROOKIES -->
+
+      <div class="card">
+
+        <h3>Brookies</h3>
+
+        <p>
+          Cookie + brownie fusion.
+        </p>
+
+        <span>12 Bs</span>
+
+        <button onclick="order('Brookie')">
+          Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TOPPINGS -->
+
+  <section class="section dark">
+
+    <h2>Premium Toppings</h2>
+
+    <div class="grid">
+
+      <!-- NUTELLA -->
+
+      <div class="card small">
+
+        <h3>Nutella</h3>
+
+        <p>+ 3 Bs</p>
+
+      </div>
+
+      <!-- NIDO -->
+
+      <div class="card small">
+
+        <h3>Nido</h3>
+
+        <p>+ 2 Bs</p>
+
+      </div>
+
+      <!-- DULCE DE LECHE -->
+
+      <div class="card small">
+
+        <h3>Dulce de Leche</h3>
+
+        <p>+ 3 Bs</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DELIVERY -->
+
+  <section class="section">
+
+    <h2>Delivery</h2>
+
+    <p class="delivery">
+      🚚 Fast delivery available in Santa Cruz
+      <br>
+      ⏱ 30–45 minutes
+      <br>
+      📍 Pickup available
+    </p>
+
+  </section>
+
+  <!-- ORDER -->
+
+  <section class="section center">
+
+    <h2>Place your order</h2>
+
+    <a
+      id="whatsappBtn"
+      class="btn big"
+      target="_blank"
+    >
+      Order via WhatsApp
+    </a>
+
+  </section>
+
+  <script>
+
+    const phone = "TUNUMERO";
+
+    function order(product){
+
       const btn =
       document.getElementById("whatsappBtn");
 
