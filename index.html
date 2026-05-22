@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+
     body{
       margin:0;
       font-family:'Poppins', sans-serif;
@@ -19,9 +20,10 @@
     /* HERO */
     .hero{
       height:100vh;
- background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url('fondo.jpg');
+      background:
+      linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url('fondo.jpg');
+
       background-size:cover;
       background-position:center;
       display:flex;
@@ -33,7 +35,7 @@ url('fondo.jpg');
       color:white;
     }
 
-    /* TITULO ESTETICO */
+    /* TITULO */
     .hero h1{
       font-family:'Playfair Display', serif;
       font-style:italic;
@@ -74,43 +76,109 @@ url('fondo.jpg');
 
     /* SECTIONS */
     .section{
-      padding:70px 20px;
+      padding:90px 20px;
       text-align:center;
     }
 
+    /* ===== MENU BONITO ===== */
+
+    #menu{
+      position:relative;
+      overflow:hidden;
+      background:
+      linear-gradient(135deg,#fff8f2,#f6e7dc);
+    }
+
+    /* CIRCULOS DECORATIVOS */
+    #menu::before,
+    #menu::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(90px);
+      z-index:0;
+    }
+
+    #menu::before{
+      width:320px;
+      height:320px;
+      background:rgba(217,160,102,.35);
+      top:-100px;
+      left:-100px;
+    }
+
+    #menu::after{
+      width:260px;
+      height:260px;
+      background:rgba(74,44,42,.18);
+      bottom:-80px;
+      right:-80px;
+    }
+
+    /* CONTENIDO ENCIMA */
+    #menu h2,
+    #menu .grid{
+      position:relative;
+      z-index:1;
+    }
+
+    /* TITULOS */
     .section h2{
       font-family:'Playfair Display', serif;
       font-style:italic;
-      font-size:2.5rem;
-      margin-bottom:20px;
+      font-size:3rem;
+      margin-bottom:25px;
+      color:#3a1f16;
+      text-shadow:0 4px 10px rgba(0,0,0,.08);
     }
 
+    /* DARK SECTION */
     .section.dark{
       background:#4a2c2a;
+      color:white;
+    }
+
+    .section.dark h2{
       color:white;
     }
 
     /* GRID */
     .grid{
       display:flex;
-      gap:25px;
+      gap:30px;
       justify-content:center;
       flex-wrap:wrap;
-      margin-top:30px;
+      margin-top:40px;
     }
 
-    /* CARDS */
+    /* CARDS PREMIUM */
     .card{
-      background:white;
-      padding:22px;
-      border-radius:18px;
+      background:rgba(255,255,255,.65);
+
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,.5);
+
+      padding:28px;
+      border-radius:24px;
+
       width:260px;
-      box-shadow:0 10px 25px rgba(0,0,0,.1);
-      transition:0.3s;
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,.08),
+      inset 0 1px 1px rgba(255,255,255,.4);
+
+      transition:.35s ease;
     }
 
+    /* HOVER */
     .card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-10px) scale(1.03);
+
+      box-shadow:
+      0 20px 45px rgba(0,0,0,.12),
+      0 0 25px rgba(217,160,102,.25);
     }
 
     .card.small{
@@ -120,27 +188,46 @@ url('fondo.jpg');
     .card h3{
       font-family:'Playfair Display', serif;
       font-style:italic;
-      margin-bottom:10px;
+      margin-bottom:12px;
+      font-size:1.8rem;
+    }
+
+    .card p{
+      font-size:1rem;
+      line-height:1.6;
     }
 
     .card span{
       display:block;
-      margin:10px 0;
+      margin:15px 0;
       font-weight:bold;
+      font-size:1.3rem;
+      color:#4a2c2a;
     }
 
+    /* BOTONES */
     .card button{
-      background:#4a2c2a;
+      background:
+      linear-gradient(135deg,#5a342f,#2d1b12);
+
       color:white;
       border:none;
-      padding:10px;
-      border-radius:10px;
+
+      padding:12px 20px;
+
+      border-radius:12px;
       cursor:pointer;
-      transition:0.3s;
+
+      font-weight:600;
+
+      transition:.3s;
     }
 
     .card button:hover{
-      background:#2d1b12;
+      background:
+      linear-gradient(135deg,#7a4a42,#3d2418);
+
+      transform:scale(1.05);
     }
 
     /* DELIVERY */
@@ -155,6 +242,7 @@ url('fondo.jpg');
       flex-direction:column;
       align-items:center;
     }
+
   </style>
 </head>
 
@@ -162,9 +250,17 @@ url('fondo.jpg');
 
   <!-- HERO -->
   <header class="hero">
+
     <h1>The Triple Bite</h1>
-    <p>Freshly baked blondies, brownies & brookies 🍫</p>
-    <a href="#menu" class="btn">View Menu</a>
+
+    <p>
+      Freshly baked blondies, brownies & brookies 🍫
+    </p>
+
+    <a href="#menu" class="btn">
+      View Menu
+    </a>
+
   </header>
 
   <!-- MENU -->
@@ -176,23 +272,44 @@ url('fondo.jpg');
 
       <div class="card">
         <h3>Brownies</h3>
-        <p>Rich fudgy chocolate brownie.</p>
+
+        <p>
+          Rich fudgy chocolate brownie.
+        </p>
+
         <span>$5</span>
-        <button onclick="order('Brownie')">Order</button>
+
+        <button onclick="order('Brownie')">
+          Order
+        </button>
       </div>
 
       <div class="card">
         <h3>Blondies</h3>
-        <p>Soft vanilla caramel bar.</p>
+
+        <p>
+          Soft vanilla caramel bar.
+        </p>
+
         <span>$5</span>
-        <button onclick="order('Blondie')">Order</button>
+
+        <button onclick="order('Blondie')">
+          Order
+        </button>
       </div>
 
       <div class="card">
         <h3>Brookies</h3>
-        <p>Cookie + brownie fusion.</p>
+
+        <p>
+          Cookie + brownie fusion.
+        </p>
+
         <span>$6</span>
-        <button onclick="order('Brookie')">Order</button>
+
+        <button onclick="order('Brookie')">
+          Order
+        </button>
       </div>
 
     </div>
@@ -226,8 +343,10 @@ url('fondo.jpg');
     <h2>Delivery</h2>
 
     <p class="delivery">
-      🚚 Fast delivery available in Santa Cruz<br>
-      ⏱ 30–45 minutes<br>
+      🚚 Fast delivery available in Santa Cruz
+      <br>
+      ⏱ 30–45 minutes
+      <br>
       📍 Pickup available
     </p>
 
@@ -238,24 +357,33 @@ url('fondo.jpg');
 
     <h2>Place your order</h2>
 
-    <a id="whatsappBtn" class="btn big" target="_blank">
+    <a id="whatsappBtn"
+       class="btn big"
+       target="_blank">
+
       Order via WhatsApp
+
     </a>
 
   </section>
 
   <script>
+
     const phone = "TUNUMERO";
 
     function order(product){
-      const btn = document.getElementById("whatsappBtn");
 
-      const message = `Hello! I want to order a ${product} from The Triple Bite 🍫`;
+      const btn =
+      document.getElementById("whatsappBtn");
 
-      btn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      const message =
+      `Hello! I want to order a ${product} from The Triple Bite 🍫`;
+
+      btn.href =
+      `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     }
+
   </script>
 
 </body>
 </html>
-
