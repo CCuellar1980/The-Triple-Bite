@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Triple Bite</title>
 
-  <!-- FONTS -->
+  <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
 
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family:'Poppins', sans-serif;
       background:#fff8f2;
       color:#2d1b12;
     }
 
     /* HERO */
+
     .hero{
       height:100vh;
+
       background:
       linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
       url('fondo.jpg');
 
       background-size:cover;
       background-position:center;
+
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
+
       text-align:center;
       padding:20px;
+
       color:white;
     }
 
-    /* TITULO */
     .hero h1{
       font-family:'Playfair Display', serif;
       font-style:italic;
       font-size:5rem;
-      margin:0;
-      letter-spacing:2px;
-      color:#ffffff;
+
       text-shadow:0 6px 25px rgba(0,0,0,.6);
     }
 
     .hero p{
+      margin-top:15px;
       font-size:1.3rem;
-      margin:15px 0 25px;
+
       color:#f5f5f5;
-      text-shadow:0 4px 15px rgba(0,0,0,.5);
     }
 
-    /* BOTON */
+    /* BOTONES */
+
     .btn{
+      margin-top:25px;
+
       background:#d9a066;
       color:white;
+
       padding:14px 28px;
+
       border-radius:12px;
+
       text-decoration:none;
       font-weight:600;
-      transition:0.3s;
+
+      transition:.3s;
     }
 
     .btn:hover{
-      transform:scale(1.05);
       background:#c98a4d;
+      transform:scale(1.05);
     }
 
     .btn.big{
       font-size:1.2rem;
-      padding:16px 32px;
+      padding:16px 34px;
     }
 
-    /* SECTIONS */
+    /* SECCIONES */
+
     .section{
       padding:90px 20px;
       text-align:center;
@@ -85,100 +100,108 @@
     #menu{
       position:relative;
       overflow:hidden;
+
       background:
-      linear-gradient(135deg,#fff8f2,#f6e7dc);
+      linear-gradient(135deg,#fff7f0,#f3dfcf);
     }
 
-    /* CIRCULOS DECORATIVOS */
-    #menu::before,
+    /* EFECTOS */
+
+    #menu::before{
+      content:"";
+      position:absolute;
+
+      width:350px;
+      height:350px;
+
+      background:#d9a066;
+
+      border-radius:50%;
+
+      top:-120px;
+      left:-120px;
+
+      filter:blur(100px);
+
+      opacity:.35;
+    }
+
     #menu::after{
       content:"";
       position:absolute;
+
+      width:300px;
+      height:300px;
+
+      background:#4a2c2a;
+
       border-radius:50%;
-      filter:blur(90px);
-      z-index:0;
-    }
 
-    #menu::before{
-      width:320px;
-      height:320px;
-      background:rgba(217,160,102,.35);
-      top:-100px;
-      left:-100px;
-    }
+      bottom:-120px;
+      right:-120px;
 
-    #menu::after{
-      width:260px;
-      height:260px;
-      background:rgba(74,44,42,.18);
-      bottom:-80px;
-      right:-80px;
-    }
+      filter:blur(100px);
 
-    /* CONTENIDO ENCIMA */
-    #menu h2,
-    #menu .grid{
-      position:relative;
-      z-index:1;
+      opacity:.18;
     }
 
     /* TITULOS */
+
     .section h2{
+      position:relative;
+      z-index:2;
+
       font-family:'Playfair Display', serif;
       font-style:italic;
+
       font-size:3rem;
-      margin-bottom:25px;
+
+      margin-bottom:40px;
+
       color:#3a1f16;
-      text-shadow:0 4px 10px rgba(0,0,0,.08);
-    }
-
-    /* DARK SECTION */
-    .section.dark{
-      background:#4a2c2a;
-      color:white;
-    }
-
-    .section.dark h2{
-      color:white;
     }
 
     /* GRID */
+
     .grid{
+      position:relative;
+      z-index:2;
+
       display:flex;
-      gap:30px;
       justify-content:center;
       flex-wrap:wrap;
-      margin-top:40px;
+
+      gap:30px;
     }
 
-    /* CARDS PREMIUM */
+    /* CARDS */
+
     .card{
       background:rgba(255,255,255,.65);
 
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
 
       border:1px solid rgba(255,255,255,.5);
 
-      padding:28px;
-      border-radius:24px;
-
       width:260px;
 
-      box-shadow:
-      0 10px 30px rgba(0,0,0,.08),
-      inset 0 1px 1px rgba(255,255,255,.4);
+      padding:28px;
 
-      transition:.35s ease;
+      border-radius:24px;
+
+      box-shadow:
+      0 10px 25px rgba(0,0,0,.08);
+
+      transition:.35s;
     }
 
-    /* HOVER */
     .card:hover{
-      transform:translateY(-10px) scale(1.03);
+      transform:translateY(-8px);
 
       box-shadow:
-      0 20px 45px rgba(0,0,0,.12),
-      0 0 25px rgba(217,160,102,.25);
+      0 18px 35px rgba(0,0,0,.12),
+      0 0 20px rgba(217,160,102,.25);
     }
 
     .card.small{
@@ -188,34 +211,41 @@
     .card h3{
       font-family:'Playfair Display', serif;
       font-style:italic;
+
       margin-bottom:12px;
+
       font-size:1.8rem;
     }
 
     .card p{
-      font-size:1rem;
       line-height:1.6;
     }
 
     .card span{
       display:block;
+
       margin:15px 0;
-      font-weight:bold;
+
       font-size:1.3rem;
+      font-weight:bold;
+
       color:#4a2c2a;
     }
 
-    /* BOTONES */
+    /* BOTONES CARD */
+
     .card button{
       background:
       linear-gradient(135deg,#5a342f,#2d1b12);
 
       color:white;
+
       border:none;
 
       padding:12px 20px;
 
       border-radius:12px;
+
       cursor:pointer;
 
       font-weight:600;
@@ -224,19 +254,32 @@
     }
 
     .card button:hover{
+      transform:scale(1.05);
+
       background:
       linear-gradient(135deg,#7a4a42,#3d2418);
+    }
 
-      transform:scale(1.05);
+    /* SECTION OSCURA */
+
+    .dark{
+      background:#4a2c2a;
+      color:white;
+    }
+
+    .dark h2{
+      color:white;
     }
 
     /* DELIVERY */
+
     .delivery{
       font-size:1.1rem;
-      line-height:1.9;
+      line-height:2;
     }
 
     /* CENTER */
+
     .center{
       display:flex;
       flex-direction:column;
@@ -249,6 +292,7 @@
 <body>
 
   <!-- HERO -->
+
   <header class="hero">
 
     <h1>The Triple Bite</h1>
@@ -264,6 +308,7 @@
   </header>
 
   <!-- MENU -->
+
   <section id="menu" class="section">
 
     <h2>Our Desserts</h2>
@@ -271,6 +316,7 @@
     <div class="grid">
 
       <div class="card">
+
         <h3>Brownies</h3>
 
         <p>
@@ -282,9 +328,11 @@
         <button onclick="order('Brownie')">
           Order
         </button>
+
       </div>
 
       <div class="card">
+
         <h3>Blondies</h3>
 
         <p>
@@ -296,9 +344,11 @@
         <button onclick="order('Blondie')">
           Order
         </button>
+
       </div>
 
       <div class="card">
+
         <h3>Brookies</h3>
 
         <p>
@@ -310,6 +360,7 @@
         <button onclick="order('Brookie')">
           Order
         </button>
+
       </div>
 
     </div>
@@ -317,6 +368,7 @@
   </section>
 
   <!-- TOPPINGS -->
+
   <section class="section dark">
 
     <h2>Premium Toppings</h2>
@@ -338,6 +390,7 @@
   </section>
 
   <!-- DELIVERY -->
+
   <section class="section">
 
     <h2>Delivery</h2>
@@ -353,16 +406,17 @@
   </section>
 
   <!-- ORDER -->
+
   <section class="section center">
 
     <h2>Place your order</h2>
 
-    <a id="whatsappBtn"
-       class="btn big"
-       target="_blank">
-
+    <a
+      id="whatsappBtn"
+      class="btn big"
+      target="_blank"
+    >
       Order via WhatsApp
-
     </a>
 
   </section>
